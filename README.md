@@ -7,7 +7,7 @@ A parser android library for Math equations using a lighter, faster and more com
 #### Add to your `build.gradle`
 
 ```groovy
-implementation "com.github.niltonvasques:parsecs-android:0.2.+"
+implementation "com.github.kaefer-do:parsecs-android:1.0.+"
 ```
 
 ## Run
