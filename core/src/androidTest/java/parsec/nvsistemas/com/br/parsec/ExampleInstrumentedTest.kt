@@ -1,23 +1,22 @@
-package parsec.nvsistemas.com.br.parsec
+package br.com.nvsistemas.parsec
 
-import androidx.test.InstrumentationRegistry.getTargetContext
+import android.content.Context
+import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
 
-import org.junit.Assert.*
-
 /**
- * Instrumented test, which will execute on an Android device.
- *
- * See [testing documentation](http://d.android.com/tools/testing).
+ * Instrumented test que valida o packageName gerado para o APK de testes.
+ * Para módulos library, o package usado nos testes normalmente é <namespace>.test
  */
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
-        // Context of the app under test.
-        val appContext = getTargetContext()
-        assertEquals("parsec.nvsistemas.com.br.parsec", appContext.packageName)
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        // Para módulo library o packageName esperado é namespace + ".test"
+        assertEquals("br.com.nvsistemas.parsec.test", context.packageName)
     }
 }
