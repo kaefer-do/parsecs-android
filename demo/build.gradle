@@ -2,8 +2,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion "30.0.3"
+    namespace 'br.com.nvsistemas.parsec.demo'
+    compileSdk 33
+    ndkVersion '28.2.13676358'
 
     defaultConfig {
         applicationId "br.com.nvsistemas.parsec.demo"
@@ -25,6 +26,14 @@ android {
 
     viewBinding {
         enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
     }
 
 }
